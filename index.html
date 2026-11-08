@@ -409,7 +409,254 @@
             </div>
         </div>
 
-        
+        <!-- SECCIÓN: CONFIGURADOR 3D INTERACTIVO POR COMPARTIMENTOS -->
+        <section id="configurador-3d" class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-lg my-8">
+            <div class="text-center max-w-xl mx-auto mb-6">
+                <span
+                class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full">
+                ESCALADOR 3D
+            </span>
+            <h2 class="text-2xl font-black text-gray-900 mt-2">Diseñá tu mueble Sección por Sección</h2>
+                <p class="text-xs md:text-sm text-gray-500 mt-1">Definí el tamaño exterior, dividí en columnas y asigná
+                    puertas, cajones o estantes a cada hueco.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+                <!-- VISOR 3D INTERACTIVO + AVISO LEGAL MINIMALISTA -->
+                <div class="lg:col-span-7 flex flex-col gap-3 lg:sticky lg:top-20">
+
+                    <!-- VISOR 3D -->
+                    <div
+                        class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-inner h-[440px] flex items-center justify-center">
+                        <div id="canvas-container" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
+
+                        <div
+                            class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
+                            <span>🖱️ Rotá en 360° con el mouse o el dedo</span>
+                        </div>
+                    </div>
+
+                    <!-- AVISO DE PRECIO ESTIMADO / PINOPOLIS STYLE -->
+                    <div
+                        class="bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 flex items-center justify-between gap-3 shadow-sm">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-amber-500 text-sm">💡</span>
+                            <p class="text-[11px] text-slate-600 font-medium leading-relaxed">
+                                <strong class="text-slate-800 font-bold">Nota orientativa:</strong> El presupuesto es
+                                aproximado. Se recomienda consultar cotización exacta por WhatsApp con el equipo.
+                            </p>
+                        </div>
+                        <button onclick="enviarEspecificaciones3D()"
+                            class="flex-shrink-0 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border border-emerald-200 transition-colors flex items-center gap-1.5">
+                            <span>Consultar</span>
+                            <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- PANEL DE CONTROL POR ZONAS Y COMPARTIMENTOS -->
+                <div
+                    class="lg:col-span-5 space-y-5 bg-gray-50 p-6 rounded-2xl border border-gray-200/80 max-h-[620px] overflow-y-auto">
+
+                    <!-- 1. MEDIDAS Y ESTRUCTURA DE COLUMNAS -->
+                    <div>
+                        <h3 class="text-xs font-black text-gray-700 uppercase tracking-wider mb-2">1. Estructura
+                            Exterior y Paneles</h3>
+
+                        <div class="space-y-2 text-xs">
+                            <div>
+                                <div class="flex justify-between font-bold text-gray-600 mb-0.5">
+                                    <span>Ancho Total:</span> <span id="val-ancho"
+                                        class="text-emerald-600 font-mono">1.80 m</span>
+                                </div>
+                                <input type="range" id="input-ancho" min="0.6" max="3.0" step="0.05" value="1.8"
+                                    class="w-full accent-emerald-600">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between font-bold text-gray-600 mb-0.5">
+                                    <span>Alto Total:</span> <span id="val-alto" class="text-emerald-600 font-mono">2.00
+                                        m</span>
+                                </div>
+                                <input type="range" id="input-alto" min="0.5" max="2.4" step="0.05" value="2.0"
+                                    class="w-full accent-emerald-600">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between font-bold text-gray-600 mb-0.5">
+                                    <span>Profundidad:</span> <span id="val-prof"
+                                        class="text-emerald-600 font-mono">0.50 m</span>
+                                </div>
+                                <input type="range" id="input-prof" min="0.3" max="0.8" step="0.05" value="0.5"
+                                    class="w-full accent-emerald-600">
+                            </div>
+
+                            <!-- PANELES EXTERIORES GLOBALES -->
+                            <div class="bg-white p-2.5 rounded-xl border border-gray-200 mt-2">
+                                <span class="block text-[10px] font-bold text-gray-500 uppercase mb-1.5">Incluir Paneles
+                                    Exteriores:</span>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold text-gray-700">
+                                    <label class="flex items-center gap-1.5 cursor-pointer">
+                                        <input type="checkbox" id="chk-tapa-sup" checked
+                                            class="accent-emerald-600 w-3.5 h-3.5"> Tapa Superior
+                                    </label>
+                                    <label class="flex items-center gap-1.5 cursor-pointer">
+                                        <input type="checkbox" id="chk-base" checked
+                                            class="accent-emerald-600 w-3.5 h-3.5"> Base / Piso
+                                    </label>
+                                    <label class="flex items-center gap-1.5 cursor-pointer">
+                                        <input type="checkbox" id="chk-lateral-izq" checked
+                                            class="accent-emerald-600 w-3.5 h-3.5"> Lateral Izquierdo
+                                    </label>
+                                    <label class="flex items-center gap-1.5 cursor-pointer">
+                                        <input type="checkbox" id="chk-lateral-der" checked
+                                            class="accent-emerald-600 w-3.5 h-3.5"> Lateral Derecho
+                                    </label>
+                                    <label class="flex items-center gap-1.5 cursor-pointer col-span-2">
+                                        <input type="checkbox" id="chk-fondo" checked
+                                            class="accent-emerald-600 w-3.5 h-3.5"> Fondo Trasero del Mueble
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="pt-2">
+                                <label class="block text-[11px] font-bold text-gray-700 mb-1">Cantidad de Columnas
+                                    Verticales:</label>
+                                <select id="select-columnas"
+                                    class="w-full bg-white border border-gray-300 rounded-xl p-2 text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                                    <option value="1">1 Columna (Módulo Único)</option>
+                                    <option value="2" selected>2 Columnas</option>
+                                    <option value="3">3 Columnas</option>
+                                    <option value="4">4 Columnas</option>
+                                    <option value="5">5 Columnas</option>
+                                    <option value="6">6 Columnas</option>
+                                    <option value="7">7 Columnas</option>
+                                    <option value="8">8 Columnas</option>
+                                    <option value="9">9 Columnas</option>
+                                    <option value="10">10 Columnas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. ESTRUCTURA INTERNA POR COLUMNAS -->
+                    <div class="border-t border-gray-200 pt-3">
+                        <h3 class="text-xs font-black text-gray-700 uppercase tracking-wider mb-2">2. Estructura Interna
+                            por Columnas</h3>
+                        <p class="text-[10px] text-gray-500 mb-3">Elegí cuántas divisiones horizontales querés en cada
+                            columna individualmente:</p>
+
+                        <!-- CONTENEDOR DINÁMICO DE COLUMNAS -->
+                        <div id="columnas-config-container" class="space-y-3">
+                            <!-- Generado automáticamente por JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- 3. GAMA DE MELAMINA Y PRESUPUESTO -->
+                    <div class="border-t border-gray-200 pt-3">
+                        <h3 class="text-xs font-black text-gray-700 uppercase tracking-wider mb-2">3. Gama de Melamina
+                        </h3>
+                        <select id="select-melamina"
+                            class="w-full bg-white border border-gray-300 rounded-xl p-2 text-xs font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none mb-4">
+                            <option value="blanco">Melamina Blanca Básica</option>
+                            <option value="color">Melamina Color / Liso</option>
+                            <option value="madera" selected>Melamina Símil Madera (Paraíso / Roble)</option>
+                            <option value="premium">Melamina Línea Premium</option>
+                        </select>
+
+                        <!-- PRECIO ESTIMADO ADAPTABLE -->
+                        <div
+                            class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 mb-4 pt-1">
+                            <span class="text-xs font-bold text-gray-500">Presupuesto Estimado:</span>
+                            <span id="precio-3d" class="text-2xl sm:text-xl font-black text-slate-900 tracking-tight">$
+                                0</span>
+                        </div>
+
+                        <button onclick="enviarEspecificaciones3D()"
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-3 px-4 rounded-xl shadow-md transition-colors flex items-center justify-center gap-2">
+                            <span>📲 Enviar Ficha Técnica a Pinopolis</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN DE COBERTURA Y LOCALIZACIÓN -->
+        <section class="py-20 bg-[#F9F7F2]">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#2D0A0E] mb-6">Dónde trabajamos</h2>
+                        <p class="text-gray-600 mb-6">
+                            Nuestro taller está radicado en <strong>Capitán Sarmiento, Buenos Aires</strong>. Desde aquí
+                            fabricamos y nos desplazamos para realizar instalaciones en la zona y alrededores,
+                            garantizando un servicio de cercanía y rápida respuesta.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Instalaciones a domicilio.
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div class="w-full border border-gray-200 rounded-xl p-4 shadow-sm">
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <span
+                                            class="bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide">Abierto</span>
+                                        <span id="txt-dias-atencion" class="text-sm font-bold text-gray-800">Lunes a
+                                            Sábados</span>
+                                    </div>
+                                    <p id="txt-horas-atencion" class="text-sm text-gray-700 pl-[78px] mb-4">09:00 a
+                                        13:00 — 16:00 a 20:00</p>
+
+                                    <div class="flex items-center gap-3 pt-3 border-t border-gray-200">
+                                        <span
+                                            class="bg-red-100 text-[#B81D25] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide">Cerrado</span>
+                                        <span class="text-sm font-semibold text-gray-700">Domingos y Feriados</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
+                                Presupuestos sin cargo.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div
+                        class="bg-gray-200 rounded-xl w-full h-80 relative overflow-hidden border border-gray-300 shadow-inner">
+                        <iframe title="Ubicación de Pinopolis en Google Maps"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1963.0401655945866!2d-59.78100514416028!3d-34.16100212657538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bbd7815d31fecb%3A0xa1781d12aa8890d8!2sDistribuidora%20Pinopolis!5e0!3m2!1ses-419!2sar!4v1793349481974!5m2!1ses-419!2sar"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- 5. SECCIÓN DE COBERTURA Y LOCALIZACIÓN -->
         <section class="py-20 bg-[#F9F7F2]">
