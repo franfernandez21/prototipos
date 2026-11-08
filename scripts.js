@@ -423,10 +423,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <label class="block text-[10px] font-bold text-gray-500 mb-0.5">Sección ${s + 1} (arriba a abajo):</label>
                     <select id="col-${colIndex}-sec-${s}" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-1.5 text-xs selector-zona">
                         <option value="vacio" selected>Vacío / Abierto</option>
-                        <option value="puerta">Puerta Batible</option>
                         <option value="estantes-1">1 Estante Interno</option>
                         <option value="estantes-2">2 Estantes Internos</option>
                         <option value="estantes-3">3 Estantes Internos</option>
+                        <option value="puerta">Puerta Batible (Sola)</option>
+                        <option value="puerta-estantes-1">Puerta + 1 Estante</option>
+                        <option value="puerta-estantes-2">Puerta + 2 Estantes</option>
+                        <option value="puerta-estantes-3">Puerta + 3 Estantes</option>
                         <option value="cajones-2">Cajonera (2 cajones)</option>
                         <option value="cajones-3">Cajonera (3 cajones)</option>
                         <option value="cajones-4">Cajonera (4 cajones)</option>
@@ -457,7 +460,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarCompartimento(anchoComp, altoComp, profComp, posX, posY, tipo, e) {
         let areaAdicional = 0;
 
-        if (tipo === 'puerta') {
+        // Detectar si lleva estantes (solos o combinados con puerta)
+        let numEstantes = 0;
+        if (tipo.startsWith('estantes-')) {
+            numEstantes = parseInt(tipo.split('-')[1]) || 0;
+        } else if (tipo.startsWith('puerta-estantes-')) {
+            numEstantes = parseInt(tipo.split('-')[2]) || 0;
+        }
+
+        // 1. Renderizar estantes internos si los hay
+        if (numEstantes > 0) {
+            for (let s = 1; s <= numEstantes; s++) {
+                const yEstante = (posY - altoComp / 2) + (altoComp / (numEstantes + 1)) * s;
+                crearPlaca(anchoComp, e, profComp - 0.03, posX, yEstante, 0, materialMelamina);
+                areaAdicional += (anchoComp * profComp);
+            }
+        }
+
+        // 2. Renderizar Puerta (sola o con estantes)
+        if (tipo === 'puerta' || tipo.startsWith('puerta-estantes-')) {
             crearPlaca(anchoComp - 0.005, altoComp - 0.005, 0.018, posX, posY, profComp / 2 + 0.01, materialFrentes);
 
             const manijaMesh = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.14, 0.02), materialManijas);
@@ -465,7 +486,9 @@ document.addEventListener('DOMContentLoaded', () => {
             muebleGroup.add(manijaMesh);
 
             areaAdicional += (anchoComp * altoComp);
-        } else if (tipo.startsWith('cajones-')) {
+        } 
+        // 3. Renderizar Cajones (excluyentes de estantes)
+        else if (tipo.startsWith('cajones-')) {
             const numCajones = parseInt(tipo.split('-')[1]) || 3;
             const altoCajon = (altoComp / numCajones) - 0.006;
             const profCuerpo = Math.max(0.2, profComp - 0.08);
@@ -491,13 +514,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 crearPlaca(anchoCuerpo - (2 * eCajon), altoCuerpo, eCajon, posX, yCentroCuerpo, zCentroCuerpo - (profCuerpo / 2) + (eCajon / 2), materialMelamina);
 
                 areaAdicional += (anchoComp * altoCajon) + (anchoCuerpo * profCuerpo) + (2 * altoCuerpo * profCuerpo);
-            }
-        } else if (tipo.startsWith('estantes-')) {
-            const numEstantes = parseInt(tipo.split('-')[1]) || 2;
-            for (let s = 1; s <= numEstantes; s++) {
-                const yEstante = (posY - altoComp / 2) + (altoComp / (numEstantes + 1)) * s;
-                crearPlaca(anchoComp, e, profComp - 0.03, posX, yEstante, 0, materialMelamina);
-                areaAdicional += (anchoComp * profComp);
             }
         }
         return areaAdicional;
