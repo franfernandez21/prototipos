@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métricas - Pinopolis</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: system-ui, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .header {
+            padding: 12px 20px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-weight: 700;
+            color: #111827;
+            font-size: 16px;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 49px);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('content/metricas.json')
+                .then(response => response.json())
+                .then(data => {
+                    const contenedorMetricas = document.getElementById('contenedor-graficos');
+                    const mensajeApagado = document.getElementById('mensaje-desactivado');
+
+                    if (data.enable_gtm) {
+                        if (contenedorMetricas) contenedorMetricas.style.display = 'block';
+                        if (mensajeApagado) mensajeApagado.style.display = 'none';
+                    } else {
+                        if (contenedorMetricas) contenedorMetricas.style.display = 'none';
+                        if (mensajeApagado) {
+                            mensajeApagado.style.display = 'block';
+                            mensajeApagado.innerHTML = `
+                            <div class="p-8 text-center bg-gray-900 text-white rounded-2xl shadow-lg my-12">
+                                <h3 class="text-xl font-bold mb-2">Métricas Desactivadas</h3>
+                                <p class="text-gray-400">Las estadísticas de Google Tag Manager están actualmente desactivadas desde el panel de administración.</p>
+                            </div>
+                        `;
+                        }
+                    }
+                })
+                .catch(err => console.log('Error al leer la configuración de métricas.'));
+        });
+    </script>
+    <div class="header">
+        <span class="title">📊 Panel de Métricas y Estadísticas de la Web</span>
+    </div>
+    <iframe width="600" height="443"
+        src="https://datastudio.google.com/embed/reporting/a49725e1-73e7-483e-9eca-db098c1df8bc/page/oguCG"
+        frameborder="0" style="border:0" allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+</body>
+
+</html>

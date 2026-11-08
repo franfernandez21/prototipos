@@ -1,0 +1,10 @@
+# Cabeceras de seguridad globales para todo el sitio
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# CSP ajustado para permitir los servicios y recursos de Looker Studio
+/admin/metricas.html
+  Content-Security-Policy: default-src 'self'; frame-src 'self' https://lookerstudio.google.com https://datastudio.google.com https://*.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://*.googleapis.com; font-src 'self' https://*.gstatic.com; image-src 'self' data: https://*.google.com https://*.gstatic.com https://*.googleusercontent.com; connect-src 'self' https://*.google.com https://*.google-analytics.com;

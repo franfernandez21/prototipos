@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración</title>
+  <!-- Widget de Netlify Identity (indispensable para el login) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+  <!-- Script de Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Observador inteligente para inyectar el botón de métricas al cargar la interfaz de React -->
+  <script>
+    const observer = new MutationObserver((mutations, obs) => {
+      const nav = document.querySelector('ul'); // Busca el menú lateral del CMS
+      if (nav && !document.getElementById('btn-metricas-custom')) {
+        const liMetricas = document.createElement('li');
+        liMetricas.id = 'btn-metricas-custom';
+        liMetricas.innerHTML = `
+          <a href="/admin/metricas.html" target="_blank" style="display: flex; align-items: center; padding: 10px 20px; color: #374151; font-weight: 600; text-decoration: none; gap: 10px; background: #eff6ff; border-left: 4px solid #3b82f6; margin: 10px 15px; border-radius: 4px;">
+            <span>📊 Ver Métricas</span>
+          </a>
+        `;
+        nav.appendChild(liMetricas);
+        obs.disconnect(); // Desconecta el observador una vez que insertó el botón con éxito
+      }
+    });
+
+    // Vigila cambios en todo el cuerpo de la página hasta que aparezca el menú
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  </script>
+</body>
+
+</html>

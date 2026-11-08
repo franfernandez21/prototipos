@@ -1,0 +1,127 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  # 1. SECCIONES FIJAS DE TEXTO (Para que edite el título, subtítulo, contacto, etc.)
+  - name: "contenido_web"
+    label: "Textos de la Página"
+    files:
+      - file: "content/inicio.json"
+        label: "Sección Inicio (Hero)"
+        name: "inicio"
+        fields:
+          - { label: "Span", name: "span", widget: "string" }
+          - { label: "Título Principal", name: "titulo", widget: "string" }
+          - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+          - { label: "Imagen Principal del Banner", name: "imagen_hero", widget: "image" }
+          - { label: "Texto del Botón de WhatsApp", name: "texto_boton", widget: "string" }
+
+      - file: "content/contacto.json"
+        label: "Datos de Contacto y Redes (solo del footer)"
+        name: "contacto"
+        fields:
+          - { label: "Número de WhatsApp", name: "telefono", widget: "string" }
+          - { label: "Ubicación", name: "direccion", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+
+      
+      - file: "content/nosotros.json"
+        label: "Sección Nosotros y Pasos"
+        name: "nosotros"
+        fields:
+          - { label: "Característica 1 - Título", name: "feat1_titulo", widget: "string" }
+          - { label: "Característica 1 - Subtítulo", name: "feat1_sub", widget: "string" }
+          - { label: "Característica 2 - Título", name: "feat2_titulo", widget: "string" }
+          - { label: "Característica 2 - Subtítulo", name: "feat2_sub", widget: "string" }
+          - { label: "Característica 3 - Título", name: "feat3_titulo", widget: "string" }
+          - { label: "Característica 3 - Subtítulo", name: "feat3_sub", widget: "string" }
+          
+          - { label: "Imagen de Lucas", name: "imagen_lucas", widget: "image" }
+          - { label: "Título de Lucas", name: "lucas_titulo", widget: "string" }
+          - { label: "Párrafo 1", name: "lucas_p1", widget: "text" }
+          - { label: "Párrafo 2", name: "lucas_p2", widget: "text" }
+          
+          - { label: "Título de Pasos", name: "pasos_titulo", widget: "string" }
+          
+          - { label: "Paso 1 - Título", name: "paso1_titulo", widget: "string" }
+          - { label: "Paso 1 - Descripción", name: "paso1_desc", widget: "text" }
+          - { label: "Paso 2 - Título", name: "paso2_titulo", widget: "string" }
+          - { label: "Paso 2 - Descripción", name: "paso2_desc", widget: "text" }
+          - { label: "Paso 3 - Título", name: "paso3_titulo", widget: "string" }
+          - { label: "Paso 3 - Descripción", name: "paso3_desc", widget: "text" }
+
+  - name: "trabajos_seccion"
+    label: "Sección Trabajos (Carrusel)"
+    files:
+      - name: "trabajos"
+        label: "Lista de Trabajos"
+        file: "content/trabajos.json"
+        fields:
+          - { label: "Trabajo 1 - Título", name: "t1_titulo", widget: "string" }
+          - { label: "Trabajo 1 - Foto Antes", name: "t1_antes", widget: "image" }
+          - { label: "Trabajo 1 - Foto Después", name: "t1_despues", widget: "image" }
+
+          - { label: "Trabajo 2 - Título", name: "t2_titulo", widget: "string" }
+          - { label: "Trabajo 2 - Foto Antes", name: "t2_antes", widget: "image" }
+          - { label: "Trabajo 2 - Foto Después", name: "t2_despues", widget: "image" }
+
+          - { label: "Trabajo 3 - Título", name: "t3_titulo", widget: "string", required: false }
+          - { label: "Trabajo 3 - Foto Antes", name: "t3_antes", widget: "image", required: false }
+          - { label: "Trabajo 3 - Foto Después", name: "t3_despues", widget: "image", required: false }
+
+          - { label: "Trabajo 4 - Título", name: "t4_titulo", widget: "string", required: false }
+          - { label: "Trabajo 4 - Foto Antes", name: "t4_antes", widget: "image", required: false }
+          - { label: "Trabajo 4 - Foto Después", name: "t4_despues", widget: "image", required: false }
+
+          - { label: "Trabajo 5 - Título", name: "t5_titulo", widget: "string", required: false }
+          - { label: "Trabajo 5 - Foto Antes", name: "t5_antes", widget: "image", required: false }
+          - { label: "Trabajo 5 - Foto Después", name: "t5_despues", widget: "image", required: false }
+
+          - { label: "Trabajo 6 - Título", name: "t6_titulo", widget: "string", required: false }
+          - { label: "Trabajo 6 - Foto Antes", name: "t6_antes", widget: "image", required: false }
+          - { label: "Trabajo 6 - Foto Después", name: "t6_despues", widget: "image", required: false }
+
+# 4. PREGUNTAS FRECUENTES (FAQ)
+  - name: "seccion_faq"
+    label: "Preguntas Frecuentes"
+    files:
+      - file: "content/faq.json"
+        label: "Modificar Preguntas y Respuestas"
+        name: "preguntas_frecuentes"
+        fields:
+          - label: "Preguntas Frecuentes"
+            name: "faqs"
+            widget: "list"
+            summary: "{{fields.pregunta}}"
+            fields:
+              - { label: "Pregunta", name: "pregunta", widget: "string" }
+              - { label: "Respuesta", name: "respuesta", widget: "text" }
+
+# 5. CONFIGURACIÓN GENERAL
+  - name: "configuracion_general"
+    label: "Configuración General"
+    files:
+      - file: "content/configuracion.json"
+        label: "WhatsApp y Horarios"
+        name: "configuracion"
+        fields:
+          - { label: "Número de WhatsApp de Botones (con código de país sin +)", name: "whatsapp", widget: "string", hint: "Ej: 5492478507925" }
+          - { label: "Días de Atención", name: "dias_atencion", widget: "string", hint: "Ej: Lunes a Sábados" }
+          - { label: "Horas de Atención", name: "horas_atencion", widget: "string", hint: "Ej: 09:00 a 13:00 — 16:00 a 20:00" }
+
+# 6- ACTIVACIÓN / DESACTIVACIÓN DE GTM (METRICAS)
+  - name: "metricas_config"
+    label: "Configuración del Sitio"
+    files:
+    - file: "content/metricas.json"
+      label: "Métricas y GTM"
+      name: "metricas"
+      fields:
+        - { label: "Activar Métricas (GTM)", name: "enable_gtm", widget: "boolean", default: false }
+        - { label: "ID de Google Tag Manager", name: "gtm_id", widget: "string", default: "GTM-PJSW4SC5", required: false }

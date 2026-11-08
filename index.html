@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/Logo.jpg.jpeg" type="image/x-icon" />
+
+    <!-- SEO Principal -->
+    <title>Pinopolis | Muebles a Medida en Capitán Sarmiento</title>
+    <meta name="description"
+        content="Diseñamos y fabricamos muebles a medida en Capitán Sarmiento y zona. Cocinas, placares y vestidores de alta calidad. ¡Pedí tu presupuesto!">
+    <link rel="canonical" href="https://pinopolis.netlify.app/">
+
+    <!-- Open Graph / Redes Sociales y WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pinopolis.netlify.app/">
+    <meta property="og:title" content="Pinopolis | Muebles a Medida de Alta Calidad">
+    <meta property="og:description"
+        content="Transformá tus espacios con muebles funcionales y modernos diseñados exclusivamente para vos en Capitán Sarmiento.">
+    <meta property="og:image" content="https://pinopolis.netlify.app/images/Logo.jpg.jpeg">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- Fuente de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+        media="print" onload="this.media='all'">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased relative">
+
+    <!-- BOTÓN FLOTANTE WHATSAPP (Global CTA) -->
+    <a href="https://wa.me/5492478507925?text=Hola%20equipo%20de%20Pinopolis!%20Me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20a%20medida."
+        target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-2xl hover:bg-green-600 hover:scale-105 transition-transform flex items-center justify-center group"
+        aria-label="Cotizar por WhatsApp">
+        <svg class="h-10 w-10">
+            <use xlink:href="./images/sprites.svg#icon-wp" />
+        </svg>
+        <span
+            class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 ease-in-out font-bold">Cotizar
+            por WhatsApp</span>
+    </a>
+
+    <!-- NAVBAR STICKY -->
+    <nav class="sticky top-0 z-50 bg-white w-full shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 md:px-6 h-15 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 flex-shrink-0">
+                <img src="images/Logo2.jpg" alt="Logo Pinopolis" width="48" height="48"
+                    class="h-12 w-12 rounded-full object-contain border border-gray-200">
+                <div class="hidden sm:block">
+                    <span
+                        class="block text-[10px] font-bold text-gray-700 tracking-widest uppercase leading-none">Distribuidora</span>
+                    <span class="block text-xl font-extrabold text-[#CC292B] leading-tight">Pinopolis</span>
+                </div>
+            </a>
+
+            <div class="flex-1 flex justify-end overflow-x-auto no-scrollbar ml-4">
+                <ul class="flex items-center gap-6 sm:gap-8 text-sm font-semibold text-gray-700 whitespace-nowrap px-2">
+                    <li><a href="#" class="text-[#CC292B] hover:text-[#a52123] transition-colors">Inicio</a></li>
+                    <li><a href="#proceso" class="hover:text-[#CC292B] transition-colors">Proceso</a></li>
+                    <li><a href="#trabajos" class="hover:text-[#CC292B] transition-colors">Trabajos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- 1. HERO + SUBFOOTER -->
+        <header
+            class="relative bg-[#F9F7F2] text-[#1C1917] overflow-hidden flex flex-col justify-between w-full lg:h-[calc(100vh-65px)]">
+
+            <div
+                class="container mx-auto px-6 py-6 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center my-auto">
+
+                <div class="space-y-4 md:col-span-7 lg:col-span-6">
+                    <span id="txt-span-hero"
+                        class="inline-block bg-[#B81D25] text-[#ffcc6d] text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full w-fit">
+                        Calidad premium en cada detalle
+                    </span>
+
+                    <h1 id="txt-titulo-hero"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+                        Diseñamos y fabricamos tus muebles a medida.
+                    </h1>
+
+                    <p id="txt-subtitulo-hero" class="text-base md:text-lg text-gray-600 max-w-lg">
+                        Aprovecha cada centimetro de tu hogar. En Pinopolis creamos espacios funcionales, modernos y con
+                        maderas de la más alta calidad, pensados exclusivamente para vos.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap gap-4 items-center">
+                        <a href="https://wa.me/5492478507925?text=Hola%20equipo%20de%20Pinopolis!%20Me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20a%20medida."
+                            id="btn-boton-hero" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center bg-[#CC292B] hover:bg-[#a52123] text-[#ffcc6d] font-bold py-3 px-6 rounded-lg text-base transition-colors duration-300 shadow-md w-full md:w-auto">
+                            <span id="txt-btn-hero">Cotizar por Whatsapp</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Imagen del Hero blindada contra desbordes y espacios vacíos -->
+                <div class="hidden md:flex justify-center items-center md:col-span-5 lg:col-span-6 w-full my-auto">
+
+                    <div
+                        class="relative w-full max-w-[420px] aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 mx-auto bg-white flex items-center justify-center">
+                        <img id="imagen_hero" src="" alt="Mueble organizador a medida" width="800" height="800"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Subfooter del Hero -->
+            <div class="bg-[#F3F4F6] border-t border-gray-200 w-full mt-auto">
+                <div class="container mx-auto px-6 py-4">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-300">
+
+                        <div class="flex justify-center pb-2 md:pb-0 md:px-2 lg:px-6">
+                            <div class="flex items-center text-left gap-4 w-[280px] md:w-full md:justify-center">
+                                <svg class="w-8 h-8 text-[#CC292B] flex-shrink-0" fill="currentColor">
+                                    <use xlink:href="./images/sprites.svg#icono-madera" />
+                                </svg>
+                                <div>
+                                    <p id="txt-feat1-titulo" class="text-[#1C1917] font-bold text-sm leading-tight">
+                                        Madera maciza</p>
+                                    <p id="txt-feat1-sub" class="text-gray-700 text-xs">La calidez de lo natural</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center pb-2 md:pb-0 md:px-2 lg:px-6">
+                            <div class="flex items-center text-left gap-4 w-[280px] md:w-full md:justify-center">
+                                <svg class="w-8 h-8 text-[#CC292B] flex-shrink-0" fill="currentColor">
+                                    <use xlink:href="./images/sprites.svg#icon-melamina" />
+                                </svg>
+                                <div>
+                                    <p id="txt-feat2-titulo" class="text-[#1C1917] font-bold text-sm leading-tight">
+                                        Muebles de melamina</p>
+                                    <p id="txt-feat2-sub" class="text-gray-700 text-xs">Prácticos para cada espacio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center pt-2 md:pt-0 md:px-2 lg:px-6">
+                            <div class="flex items-center text-left gap-4 w-[280px] md:w-full md:justify-center">
+                                <svg class="w-8 h-8 text-[#CC292B] flex-shrink-0" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <use xlink:href="./images/sprites.svg#icon-mensaje" />
+                                </svg>
+                                <div>
+                                    <p id="txt-feat3-titulo" class="text-[#1C1917] font-bold text-sm leading-tight">
+                                        Te ayudamos a elegir</p>
+                                    <p id="txt-feat3-sub" class="text-gray-700 text-xs">Consultanos por WhatsApp</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. AUTORIDAD / MARCA PERSONAL -->
+        <section class="min-h-[calc(100vh-65px)] bg-white flex flex-col justify-center py-12">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div
+                    class="flex flex-col md:flex-row items-center gap-12 bg-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div
+                        class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full shadow-lg border-4 border-[#f5be57] bg-white flex items-center justify-center overflow-hidden">
+                        <img id="img-lucas" src="" alt="Lucas - Fundador de Pinopolis" width="256" height="256"
+                            class="w-full h-full object-contain p-2" loading="lazy">
+                    </div>
+                    <div>
+                        <h2 id="txt-lucas-titulo" class="text-3xl font-bold text-[#2D0A0E] mb-4">El oficio y la pasión
+                            detrás de cada mueble
+                        </h2>
+                        <p id="txt-lucas-p1" class="text-gray-600 mb-4 leading-relaxed">
+                            Hola, soy Lucas. Lidero el equipo de Pinopolis con una misión clara: convertir tus ideas en
+                            muebles reales, duraderos y que le den vida a tu casa. Entiendo que remodelar o amueblar un
+                            espacio es una inversión importante.
+                        </p>
+                        <p id="txt-lucas-p2" class="text-gray-600 leading-relaxed font-medium">
+                            Por eso, trabajo directamente con cada cliente, asegurando cortes precisos, terminaciones
+                            impecables y un diseño que hable de tu estilo personal. No hacemos muebles en serie, hacemos
+                            TÚ mueble.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EL PROCESO EN 3 PASOS -->
+        <section id="proceso" class="py-20 bg-[#F9F7F2] text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 id="txt-pasos-titulo" class="text-3xl md:text-4xl font-bold mb-12 text-[#B81D25]">Tener el mueble de
+                    tus sueños es muy fácil</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-[#6E0F16] p-8 rounded-2xl border-3 border-[#B81D25] relative">
+                        <div
+                            class="w-16 h-16 bg-[#f5be57] text-[#2D0A0E] rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 transform -translate-x-1/2 shadow-lg">
+                            1</div>
+                        <svg class="w-12 h-12 mx-auto mt-6 mb-4 text-[#FFEA6C]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                            </path>
+                        </svg>
+                        <h3 id="txt-paso1-titulo" class="text-xl font-bold mb-2">Nos contás tu idea</h3>
+                        <p id="txt-paso1-desc" class="text-gray-300 text-sm">Escribinos por WhatsApp, pasanos medidas
+                            aproximadas o fotos de inspiración del espacio que querés transformar.</p>
+                    </div>
+
+                    <div class="bg-[#6E0F16] p-8 rounded-2xl border-3 border-[#B81D25] relative mt-12 md:mt-0">
+                        <div
+                            class="w-16 h-16 bg-[#f5be57] text-[#2D0A0E] rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 transform -translate-x-1/2 shadow-lg">
+                            2</div>
+                        <svg class="w-12 h-12 mx-auto mt-6 mb-4 text-[#FFEA6C]" fill="currentColor">
+                            <use xlink:href="./images/sprites.svg#icon-presupuesto" />
+                        </svg>
+                        <h3 id="txt-paso2-titulo" class="text-xl font-bold mb-2">Diseño y Presupuesto</h3>
+                        <p id="txt-paso2-desc" class="text-gray-300 text-sm">Te asesoramos con los materiales
+                            (melaminas, maderas, herrajes), armamos el diseño y te enviamos una cotización detallada sin
+                            sorpresas.</p>
+                    </div>
+
+                    <div class="bg-[#6E0F16] p-8 rounded-2xl border-3 border-[#B81D25] relative mt-12 md:mt-0">
+                        <div
+                            class="w-16 h-16 bg-[#f5be57] text-[#2D0A0E] rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 transform -translate-x-1/2 shadow-lg">
+                            3</div>
+                        <svg class="w-12 h-12 mx-auto mt-6 mb-4 text-[#FFEA6C]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <h3 id="txt-paso3-titulo" class="text-xl font-bold mb-2">Fabricación e Instalación</h3>
+                        <p id="txt-paso3-desc" class="text-gray-300 text-sm">Nos ponemos manos a la obra en el taller.
+                            Una vez listo, coordinamos el día y dejamos todo instalado impecable en tu casa.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <a href="https://wa.me/5492478507925?text=Hola%20equipo%20de%20Pinopolis!%20Me%20gustar%C3%ADa%20pedir%20un%20presupuesto%20a%20medida."
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-[#F4B41A] text-[#2D0A0E] hover:bg-[#FFEA6C] font-bold py-3 px-8 rounded-full shadow-md transition-colors">
+                        Iniciar mi proyecto ahora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GALERÍA DE TRANSFORMACIÓN (Carrusel Infinito) -->
+        <section id="trabajos" class="py-16 bg-gray-50 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#2D0A0E] mb-6">Algunos Trabajos</h2>
+                    <p class="text-gray-600 text-sm md:text-base font-medium">
+                        Pasá el cursor para ver la transformación (o tocá una foto en tu celular para ver el detalle).
+                    </p>
+                </div>
+
+                <!-- Pista del Carrusel -->
+                <div class="relative w-full overflow-hidden group/carousel">
+                    <div id="carousel-track"
+                        class="flex gap-6 w-max animate-marquee group-hover/carousel:[animation-play-state:paused]">
+
+                        <!-- Tarjeta 1: Cocina (Real) -->
+                        <div class="gallery-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer border border-gray-200 group flex-shrink-0 select-none bg-gray-900"
+                            data-antes="images/cocina-antes.jpg" data-despues="images/cocina-despues.jpg"
+                            data-titulo="Amoblamiento de Cocina Integral">
+                            <img id="img-t1-despues" src="images/cocina-despues.jpg" alt="Cocina terminada"
+                                class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-4 right-4 bg-[#B81D25] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">Después</span>
+                            <div
+                                class="image-before absolute inset-0 w-full h-full z-20 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 bg-gray-900 pointer-events-none md:pointer-events-auto">
+                                <img id="img-t1-antes" src="images/cocina-antes.jpg" alt="Cocina en obra"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="absolute top-4 left-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Antes</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2: Rack TV (Real) -->
+                        <div class="gallery-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer border border-gray-200 group flex-shrink-0 select-none bg-gray-900"
+                            data-antes="images/flotante-tv-antes.jpg" data-despues="images/flotante-tv-despues.jpg"
+                            data-titulo="Rack de TV Flotante a Medida">
+                            <img id="img-t2-despues" src="images/flotante-tv-despues.jpg" alt="Living terminado"
+                                class="w-full h-full object-cover">
+                            <span
+                                class="absolute top-4 right-4 bg-[#B81D25] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">Después</span>
+                            <div
+                                class="image-before absolute inset-0 w-full h-full z-20 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 bg-gray-900 pointer-events-none md:pointer-events-auto">
+                                <img id="img-t2-antes" src="images/flotante-tv-antes.jpg" alt="Living vacío"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="absolute top-4 left-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Antes</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: Próximamente -->
+                        <div id="card-t3"
+                            class="gallery-card placeholder-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg border border-gray-200 flex-shrink-0 select-none bg-gray-900 flex flex-col items-center justify-center text-center p-6"
+                            data-antes="" data-despues="" data-titulo="">
+                            <span
+                                class="text-white/40 text-xs uppercase tracking-widest font-bold mb-1">Pinopolis</span>
+                            <span class="text-white text-lg font-bold">Próximamente</span>
+                        </div>
+
+                        <!-- Tarjeta 4: Próximamente -->
+                        <div id="card-t4"
+                            class="gallery-card placeholder-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg border border-gray-200 flex-shrink-0 select-none bg-gray-900 flex flex-col items-center justify-center text-center p-6"
+                            data-antes="" data-despues="" data-titulo="">
+                            <span
+                                class="text-white/40 text-xs uppercase tracking-widest font-bold mb-1">Pinopolis</span>
+                            <span class="text-white text-lg font-bold">Próximamente</span>
+                        </div>
+
+                        <!-- Tarjeta 5: Próximamente -->
+                        <div id="card-t5"
+                            class="gallery-card placeholder-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg border border-gray-200 flex-shrink-0 select-none bg-gray-900 flex flex-col items-center justify-center text-center p-6"
+                            data-antes="" data-despues="" data-titulo="">
+                            <span
+                                class="text-white/40 text-xs uppercase tracking-widest font-bold mb-1">Pinopolis</span>
+                            <span class="text-white text-lg font-bold">Próximamente</span>
+                        </div>
+
+                        <!-- Tarjeta 6: Próximamente -->
+                        <div id="card-t6"
+                            class="gallery-card placeholder-card relative w-72 md:w-80 h-80 rounded-xl overflow-hidden shadow-lg border border-gray-200 flex-shrink-0 select-none bg-gray-900 flex flex-col items-center justify-center text-center p-6"
+                            data-antes="" data-despues="" data-titulo="">
+                            <span
+                                class="text-white/40 text-xs uppercase tracking-widest font-bold mb-1">Pinopolis</span>
+                            <span class="text-white text-lg font-bold">Próximamente</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- BOTÓN PARA IR A INSTAGRAM -->
+                <div class="w-full flex justify-center items-center mt-12">
+                    <a href="https://www.instagram.com/pinopolisdistribuidora/" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-[#CC292B] hover:bg-[#a52123] text-white font-bold py-1 px-8 rounded-full shadow-md transition-all hover:scale-105 gap-2">
+                        <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <use xlink:href="./images/sprites.svg#icon-inst" />
+                        </svg>
+                        Ver más trabajos en Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MODAL PARA CELULARES Y ESCRITORIO (Flotante Adaptativo) -->
+        <div id="modal-trabajo"
+            class="fixed inset-0 z-50 bg-black/80 hidden flex-col items-center justify-center p-4 backdrop-blur-sm">
+            <div class="relative w-full max-w-lg bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
+                onclick="event.stopPropagation()">
+
+                <!-- Botón cerrar -->
+                <button id="cerrar-modal"
+                    class="absolute top-3 right-3 bg-black/70 text-white w-9 h-9 rounded-full flex items-center justify-center z-30 font-bold text-lg hover:bg-black transition-colors">✕</button>
+
+                <!-- Contenedor de imagen adaptable con fondo blanco -->
+                <div id="modal-swipe-container"
+                    class="relative w-full h-auto max-h-[70vh] bg-white overflow-hidden flex items-center justify-center select-none">
+
+                    <!-- Imagen de Después (Fondo) -->
+                    <img id="modal-img-despues" src="" alt="Después"
+                        class="w-full h-auto max-h-[70vh] object-contain mx-auto">
+                    <span
+                        class="absolute top-4 right-4 bg-[#B81D25] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">Después</span>
+
+                    <!-- Imagen de Antes (Capa superior con transición de opacidad) -->
+                    <div id="modal-img-antes-container"
+                        class="absolute inset-0 w-full h-full z-20 transition-opacity duration-300 pointer-events-none flex items-center justify-center bg-white">
+                        <img id="modal-img-antes" src="" alt="Antes"
+                            class="w-full h-auto max-h-[70vh] object-contain mx-auto">
+                        <span
+                            class="absolute top-4 left-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Antes</span>
+                    </div>
+                </div>
+
+                <!-- Pie del Modal -->
+                <div
+                    class="p-4 flex flex-col sm:flex-row justify-between items-center gap-3 bg-white border-t border-gray-100">
+                    <h4 id="modal-titulo" class="font-bold text-gray-800 text-sm text-center sm:text-left"></h4>
+
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-500 hidden sm:inline">Deslizá la foto o tocá:</span>
+                        <button id="btn-toggle-antes-despues"
+                            class="bg-[#CC292B] text-white font-bold text-xs py-2 px-5 rounded-full shadow hover:bg-[#a52123] transition-colors">
+                            Ver Después
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- 5. SECCIÓN DE COBERTURA Y LOCALIZACIÓN -->
+        <section class="py-20 bg-[#F9F7F2]">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#2D0A0E] mb-6">Dónde trabajamos</h2>
+                        <p class="text-gray-600 mb-6">
+                            Nuestro taller está radicado en <strong>Capitán Sarmiento, Buenos Aires</strong>. Desde aquí
+                            fabricamos y nos desplazamos para realizar instalaciones en la zona y alrededores,
+                            garantizando un servicio de cercanía y rápida respuesta.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Instalaciones a domicilio.
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div class="w-full border border-gray-200 rounded-xl p-4 shadow-sm">
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <span
+                                            class="bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide">Abierto</span>
+                                        <span id="txt-dias-atencion" class="text-sm font-bold text-gray-800">Lunes a
+                                            Sábados</span>
+                                    </div>
+                                    <p id="txt-horas-atencion" class="text-sm text-gray-700 pl-[78px] mb-4">09:00 a
+                                        13:00 — 16:00 a 20:00</p>
+
+                                    <div class="flex items-center gap-3 pt-3 border-t border-gray-200">
+                                        <span
+                                            class="bg-red-100 text-[#B81D25] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wide">Cerrado</span>
+                                        <span class="text-sm font-semibold text-gray-700">Domingos y Feriados</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <svg class="w-6 h-6 text-[#B81D25] mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
+                                Presupuestos sin cargo.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div
+                        class="bg-gray-200 rounded-xl w-full h-80 relative overflow-hidden border border-gray-300 shadow-inner">
+                        <iframe title="Ubicación de Pinopolis en Google Maps"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1963.0401655945866!2d-59.78100514416028!3d-34.16100212657538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bbd7815d31fecb%3A0xa1781d12aa8890d8!2sDistribuidora%20Pinopolis!5e0!3m2!1ses-419!2sar!4v1793349481974!5m2!1ses-419!2sar"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ Y FORMULARIO DE CONTACTO -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <div class="flex items-center gap-4 mb-8 pt-8">
+                            <div class="relative flex flex-col items-center flex-shrink-0">
+                                <div
+                                    class="absolute -top-14 left-0 w-32 bg-white text-[#2D0A0E] text-[11px] font-extrabold py-1.5 px-2 rounded-xl shadow-md border-2 border-gray-800 z-10 text-center leading-tight">
+                                    ¿Tenés alguna duda?
+                                    <div
+                                        class="absolute -bottom-2 left-6 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-8 border-t-gray-800">
+                                    </div>
+                                </div>
+
+                                <img src="images/tablon.png" alt="Tablón" width="64" height="64"
+                                    class="w-12 h-auto animate-bounce mt-2 drop-shadow-md">
+                            </div>
+
+                            <h2 class="text-3xl font-bold text-[#2D0A0E]">Preguntas Frecuentes</h2>
+                        </div>
+
+                        <div id="faq-container" class="space-y-4">
+                            <!-- JavaScript renderizará los ítems acá -->
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-center gap-3 mb-6 pt-8">
+                            <div class="relative flex flex-col items-center flex-shrink-0">
+                                <div
+                                    class="absolute -top-12 left-0 w-32 bg-white text-[#2D0A0E] text-[11px] font-extrabold py-1.5 px-2 rounded-xl shadow-md border-2 border-gray-800 z-10 text-center leading-tight">
+                                    ¡Escribinos acá!
+                                    <div
+                                        class="absolute -bottom-2 left-6 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-8 border-t-gray-800">
+                                    </div>
+                                </div>
+
+                                <img src="images/tablon.png" alt="Tablón" width="48" height="48"
+                                    class="w-10 h-auto animate-bounce mt-2 drop-shadow-md">
+                            </div>
+
+                            <div>
+                                <h2 class="text-2xl font-bold text-[#2D0A0E] leading-tight">Envianos tu consulta</h2>
+                                <p class="text-gray-700 text-xs mt-1">Te responderemos a la brevedad.</p>
+                            </div>
+                        </div>
+
+                        <form id="form-contacto" action="https://formspree.io/f/xrppzdnj" method="POST"
+                            class="space-y-5">
+                            <div>
+                                <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-1">Nombre
+                                    completo</label>
+                                <input type="text" id="nombre" name="name" required placeholder="Ej: Juan Pérez"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#CC292B] focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Correo
+                                    electrónico</label>
+                                <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#CC292B] focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-semibold text-gray-700 mb-1">Mensaje o
+                                    idea</label>
+                                <textarea id="mensaje" name="message" rows="4" required
+                                    placeholder="Contanos qué tenés en mente..."
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#CC292B] focus:border-transparent transition-all resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="btn-enviar-form"
+                                class="w-full bg-[#CC292B] hover:bg-[#a52123] text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md flex justify-center items-center gap-2">
+                                Enviar mensaje
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+
+                            <p id="msg-exito" class="hidden text-sm font-semibold text-green-600 text-center mt-3">
+                                ¡Gracias! Tu mensaje fue enviado con éxito.</p>
+                            <p class="text-xs text-gray-400 text-center mt-4">Tus datos están seguros y no enviamos
+                                spam.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-[#2D0A0E] text-gray-300 py-3 border-t-4 border-[#B81D25]">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-4">Pinopolis</h3>
+                <p class="text-sm text-gray-400 mb-4">Muebles a medida diseñados para maximizar tus espacios con estilo,
+                    durabilidad y el mejor oficio.</p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Contacto</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>📍<span id="txt-direccion">Capitán Sarmiento, Buenos Aires</span></li>
+                    <li>📱 WhatsApp:<span id="txt-telefono">+54 9 2478 50-7925</span></li>
+                    <li>✉️ Email: <span id="txt-email">pinopolis2825@gmail.com</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Legal y Redes</h4>
+                <ul class="space-y-2 text-sm mb-4">
+                    <li><a href="politicas.html" target="_blank" class="hover:text-[#F4B41A] transition">Políticas de
+                            Privacidad</a></li>
+                    <li><a href="terminos.html" target="_blank" class="hover:text-[#F4B41A] transition">Términos y
+                            Condiciones</a></li>
+                </ul>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/pinopolisdistribuidora/" target="_blank"
+                        aria-label="Instagram de Pinopolis" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor">
+                            <use xlink:href="./images/sprites.svg#icon-inst" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/pinopolismuebleria2825/?locale=es_LA" target="_blank"
+                        aria-label="Facebook de Pinopolis" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor">
+                            <use xlink:href="./images/sprites.svg#icon-facebook" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm text-gray-400 mt-4 pt-4 border-t border-gray-800">
+            &copy; 2026 Pinopolis. Todos los derechos reservados.
+        </div>
+    </footer>
+
+
+    <script src="./scripts.js"></script>
+
+    <!-- Carga de Three.js y OrbitControls desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PJSW4SC5"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+        (function () {
+            fetch('content/metricas.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('No se encontró configuración');
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.enable_gtm && data.gtm_id) {
+                        const gtmId = data.gtm_id.trim();
+                        const script = document.createElement('script');
+                        script.async = true;
+                        script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+                        document.head.appendChild(script);
+
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                    }
+                })
+                .catch(err => {
+                    console.log('Métricas desactivadas o sin configuración.');
+                });
+        })();
+    </script>
+</body>
+
+</html>

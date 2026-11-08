@@ -1,0 +1,5 @@
+# 1. Si ES admin, le entregamos el archivo real de métricas
+/admin/metricas.html  /admin/metricas.html  200!  Role=admin
+
+# 2. Si NO es admin (o no está logueado), lo mandamos al login
+/admin/metricas.html  /admin/           302!
