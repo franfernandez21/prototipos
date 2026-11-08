@@ -387,8 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-2">
                     <span class="text-[11px] font-bold text-emerald-700 uppercase">📌 Columna ${i + 1} de ${numCols}</span>
                     <select id="col-${i}-secciones" class="w-full sm:w-auto bg-gray-100 border border-gray-300 rounded-lg p-1.5 text-[11px] font-bold text-gray-700 select-num-secciones">
-                        <option value="1">1 Sección</option>
-                        <option value="2" selected>2 Secciones</option>
+                        <option value="1"selected>1 Sección</option>
+                        <option value="2">2 Secciones</option>
                         <option value="3">3 Secciones</option>
                         <option value="4">4 Secciones</option>
                         <option value="5">5 Secciones</option>
